@@ -13,7 +13,7 @@ import GoLogo from "../assets/pics/Go_Logo.png";
 import CppLogo from "../assets/pics/Cpp_Logo.png"
 import TensorflowLogo from "../assets/pics/Tensorflow_Logo.png";
 import PytorchLogo from "../assets/pics/Pytorch_Logo.png";
-import PytorchLogoDark from "../assets/pics/PyTorch_Logo_Dark.svg";
+import PytorchLogoDark from "../assets/pics/Pytorch_Logo_Dark.svg";
 import JavaLogo from "../assets/pics/Java_Logo.png";
 import SQLLogo from "../assets/pics/SQL_Logo.png";
 
