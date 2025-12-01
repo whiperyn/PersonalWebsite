@@ -22,7 +22,7 @@ export function Sidebar({ sections, activeSection, isLight }: SidebarProps) {
 
   return (
     <aside
-      className={`md:w-60 ${borderColor} border-r ${bgPanel} backdrop-blur-sm`}
+      className={`md:w-60 ${borderColor} border-r ${bgPanel} backdrop-blur-sm pb-1`}
     >
       <div className="flex flex-col h-full max-h-screen">
         {/* top brand area */}
@@ -106,7 +106,7 @@ export function Sidebar({ sections, activeSection, isLight }: SidebarProps) {
 
           {/* bottom contact card */}
           <div
-            className={`shrink-0 border-t ${borderColor} px-4 py-4 flex flex-col justify-start min-h-[25vh]`}
+            className={`shrink-0 border-t ${borderColor} px-4 py-4 flex flex-col justify-start min-h-[25vh] mb-1`}
           >
             <div
               className={`rounded-xl border px-4 py-5 h-full flex flex-col justify-between
