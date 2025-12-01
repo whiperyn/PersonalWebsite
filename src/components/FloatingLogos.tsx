@@ -15,7 +15,7 @@ import TensorflowLogo from "../assets/pics/Tensorflow_Logo.png";
 import PytorchLogo from "../assets/pics/Pytorch_Logo.png";
 import PytorchLogoDark from "../assets/pics/Pytorch_Logo_Dark.svg";
 import JavaLogo from "../assets/pics/Java_Logo.png";
-import SQLLogo from "../assets/pics/SQL_Logo.png";
+import SQLLogo from "../assets/pics/Sql_Logo.png";
 
 
 interface FloatingLogosProps {
