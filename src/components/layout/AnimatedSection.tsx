@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 
-export type SectionId = "hero" | "experience" | "projects" | "contact" | "connect";
+export type SectionId = "hero" | "experience" | "publication" | "contact" | "connect";
 
 interface AnimatedSectionProps {
   id: SectionId;

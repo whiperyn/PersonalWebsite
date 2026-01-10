@@ -4,7 +4,7 @@ import type { SectionId } from "./components/layout/AnimatedSection";
 
 import { HeroSection } from "./sections/HeroSection";
 import { ExperienceSection } from "./sections/ExperienceSection";
-import { ProjectsSection } from "./sections/ProjectsSection";
+import { PublicationsSection } from "./sections/PublicationsSection";
 
 import { ConnectSection } from "./sections/ConnectSection";
 
@@ -20,8 +20,8 @@ const BACKGROUND_CLASSES: Record<ThemeMode, string> = {
 
 const SECTIONS: { id: SectionId; label: string }[] = [
   { id: "hero", label: "overview" },
-  { id: "experience", label: "experience" },
-  { id: "projects", label: "projects" },
+  { id: "experience", label: "experiences" },
+  { id: "publication", label: "publications" },
   { id: "connect", label: "connect" },
 ];
 
@@ -129,9 +129,8 @@ function App() {
             <ExperienceSection isLight={isLight} />
           </div>
 
-          {/* PROJECTS – same idea */}
           <div className="px-8 sm:px-12 lg:px-16">
-            <ProjectsSection isLight={isLight} />
+            <PublicationsSection isLight={isLight} />
           </div>
 
            {/* connect – similar feel to hero, centered */}
