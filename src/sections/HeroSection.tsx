@@ -47,17 +47,17 @@ export function HeroSection({ isLight }: HeroSectionProps) {
                 : "border-slate-700 bg-slate-900/80 hover:border-emerald-400 hover:bg-slate-900"
             }`}
           >
-            experience
+            experiences
           </a>
           <a
-            href="#projects"
+            href="#publication"
             className={`px-4 py-2 rounded-md border font-mono transition-colors ${
               isLight
                 ? "border-slate-300 hover:bg-slate-100"
                 : "border-slate-700/70 hover:border-slate-500"
             }`}
           >
-            projects
+            publications
           </a>
         </div>
 
@@ -83,7 +83,7 @@ export function HeroSection({ isLight }: HeroSectionProps) {
             className={`group rounded-xl border px-4 py-5 transition-colors ${boxBg}`}
           >
             <p className="text-[11px] font-mono text-emerald-500 mb-1">
-              02 · experience
+              02 · experiences
             </p>
             <h3 className="text-sm font-semibold">Internships & Roles</h3>
             <p className={`mt-2 text-xs ${boxDesc}`}>
@@ -93,11 +93,11 @@ export function HeroSection({ isLight }: HeroSectionProps) {
 
           {/* 03 projects */}
           <a
-            href="#projects"
+            href="#publication"
             className={`group rounded-xl border px-4 py-5 transition-colors ${boxBg}`}
           >
             <p className="text-[11px] font-mono text-emerald-500 mb-1">
-              03 · projects
+              03 · publications
             </p>
             <h3 className="text-sm font-semibold">Selected Work</h3>
             <p className={`mt-2 text-xs ${boxDesc}`}>
