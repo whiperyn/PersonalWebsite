@@ -22,7 +22,7 @@ const PUBLICATIONS: Publication[] = [
     years: "2024–2025",
     title: "MarkMatch: Same-Hand Stuffing Detection",
     kind: "Research · IEEE ICME 2025 Demo",
-    paperUrl: "https://arxiv.org/abs/2505.07032", // <- add your link (arXiv / PDF)
+    paperUrl: "https://arxiv.org/abs/2505.07032",
     blurb:
       "Designed a retrieval-based system for detecting same-hand ballot stuffing that replaces fragile pairwise classification with dense-batch contrastive learning for scalable election auditing.",
     highlights: [
@@ -43,10 +43,9 @@ const PUBLICATIONS: Publication[] = [
   {
     id: "impr-hallucinations",
     years: "2024–2025",
-    title:
-      "Mitigating Image Captioning Hallucinations in Vision-Language Models",
+    title: "Mitigating Image Captioning Hallucinations in Vision-Language Models",
     kind: "Research · IEEE IMPR 2025",
-    paperUrl: "https://arxiv.org/abs/2505.03420", // <- add your link (arXiv / PDF)
+    paperUrl: "https://arxiv.org/abs/2505.03420",
     blurb:
       "Proposed a reinforcement-learning test-time adaptation framework that reduces hallucinations in vision–language models by correcting behavior at inference without retraining.",
     highlights: [
@@ -70,7 +69,7 @@ const PUBLICATIONS: Publication[] = [
     title:
       "Visual Prompt Learning of Foundation Models for Post-Disaster Damage Evaluation",
     kind: "Research · Remote Sensing (May 2025)",
-    paperUrl: "https://www.mdpi.com/2072-4292/17/10/1664", // <- add your link (MDPI / PDF)
+    paperUrl: "https://www.mdpi.com/2072-4292/17/10/1664",
     blurb:
       "Developed a prompt-based framework for adapting frozen foundation models to assess building damage from satellite imagery, enabling efficient and generalizable post-disaster evaluation.",
     highlights: [
@@ -80,12 +79,7 @@ const PUBLICATIONS: Publication[] = [
       "Enabled generalization across multiple disaster types using a unified prompting approach rather than task-specific retraining.",
       "Achieved robust performance with F1 ≈ 0.70 across diverse disaster scenarios.",
     ],
-    tags: [
-      "Python",
-      "Prompt Learning",
-      "Contrastive Learning",
-      "Computer Vision",
-    ],
+    tags: ["Python", "Prompt Learning", "Contrastive Learning", "Computer Vision"],
   },
 ];
 
@@ -147,6 +141,7 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
   const goToIndex = (idx: number) => {
     const container = containerRef.current;
     if (!container) return;
+
     const slides = Array.from(
       container.querySelectorAll<HTMLElement>("[data-slide='true']")
     );
@@ -155,6 +150,7 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
     const target = slides[idx];
     const containerRect = container.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
+
     const delta =
       targetRect.left -
       containerRect.left -
@@ -179,7 +175,7 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
   return (
     <AnimatedSection
       id="publication"
-      className="h-screen flex flex-col justify-center pt-12"
+      className="min-h-[100svh] flex flex-col justify-center pt-12"
     >
       {/* big header */}
       <div className="flex items-baseline justify-between pr-2">
@@ -212,28 +208,28 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
         </div>
       </div>
 
-      {/* hero cards */}
-      <div className="relative mt-6 flex-1">
+      {/* cards */}
+      <div className="relative mt-6 flex-1 min-h-0">
         <div
           ref={containerRef}
-          className="h-full overflow-x-auto overflow-y-visible [-webkit-overflow-scrolling:touch] snap-x snap-mandatory"
+          className="h-full overflow-x-auto overflow-y-hidden [-webkit-overflow-scrolling:touch] snap-x snap-mandatory"
         >
           <div className="flex gap-8 h-full">
             {PUBLICATIONS.map((p, idx) => (
               <article
                 key={p.id}
                 data-slide="true"
-                className={`snap-center shrink-0 
-                  w-[95%] sm:w-[92%] lg:w-[88%] 
+                className={`snap-center shrink-0
+                  w-[95%] sm:w-[92%] lg:w-[88%]
                   h-[calc(100vh-14rem)] sm:h-[calc(100vh-12rem)]
-                  rounded-3xl border p-6 sm:p-10 
-                  flex flex-col justify-between 
-                  transition-transform duration-300 
+                  rounded-3xl border p-6 sm:p-10
+                  flex flex-col overflow-hidden
+                  transition-transform duration-300
                   ${cardBg} ${idx === activeIndex ? "" : "scale-[0.97]"}`}
               >
-                {/* top content */}
-                <div>
-                  {/* year line */}
+                {/* scrollable content area */}
+                <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-1">
+                  {/* year */}
                   <p className={`text-xs sm:text-sm font-mono ${yearText}`}>
                     {p.years}
                   </p>
@@ -266,20 +262,16 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
                     ) : null}
                   </div>
 
-                  {/* bigger blurb */}
+                  {/* blurb */}
                   <p
                     className={`mt-6 text-[17px] sm:text-lg lg:text-xl leading-relaxed ${bodyText}`}
                   >
                     {p.blurb}
                   </p>
 
-                  {/* highlights closer + bigger */}
+                  {/* highlights */}
                   {p.highlights?.length ? (
-                    <div
-                      className={
-                        idx === activeIndex ? "opacity-100" : "opacity-70"
-                      }
-                    >
+                    <div className={idx === activeIndex ? "opacity-100" : "opacity-70"}>
                       <div className="mt-4 mb-3 h-px w-full bg-gradient-to-r from-emerald-400/30 via-emerald-400/10 to-transparent" />
                       <ul className="space-y-4">
                         {p.highlights.map((h) => (
@@ -288,7 +280,7 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
                             className={`flex items-start gap-4 text-[16px] sm:text-lg lg:text-[19px] leading-relaxed ${metaText}`}
                           >
                             <span className="mt-[10px] h-2.5 w-2.5 rounded-full bg-emerald-400 shrink-0" />
-                            <span>{h}</span>
+                            <span className="break-words">{h}</span>
                           </li>
                         ))}
                       </ul>
@@ -296,9 +288,9 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
                   ) : null}
                 </div>
 
-                {/* tags pinned bottom, bigger */}
+                {/* tags pinned at bottom */}
                 {p.tags?.length ? (
-                  <div className="mt-8 flex flex-wrap gap-2">
+                  <div className="pt-6 flex flex-wrap gap-2">
                     {p.tags.map((tag) => (
                       <span
                         key={tag}
@@ -326,8 +318,7 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
       </div>
 
       <p className="mt-4 text-[11px] font-mono text-slate-400">
-        hint: swipe / scroll horizontally, or press ← / → to move between
-        publications.
+        hint: swipe / scroll horizontally, or press ← / → to move between publications.
       </p>
     </AnimatedSection>
   );

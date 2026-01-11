@@ -23,16 +23,9 @@ const EXPERIENCES = [
       "Flagged over-blocking and enabled an A/B test revenue win-back of ~0.001% of Facebook app revenue by improving classification accuracy.",
       "Remediated 50+ ad features and migrated 82 features from a soon-to-be-deprecated to a supported data source in 5 days.",
       "Delivered a daily Hive compliance discrepancy-check table to monitor compliance mismatches.",
-      "Revived a PHP revenue-tracking pipeline, stabilized a high-revenue dataset (mappings / deprecations / backfills), and defined legacy logging protocols—work adopted into H2 goals and leading to a new cross-org partnership.",
+      "Revived a PHP revenue-tracking pipeline, stabilized a high-revenue dataset, and defined legacy logging protocols—work adopted into H2 goals and leading to a new cross-org partnership.",
     ],
-    tags: [
-      "Python",
-      "Hive",
-      "Data Quality",
-      "Compliance",
-      "Pipelines",
-      "Ads Infra",
-    ],
+    tags: ["Python", "Hive", "Data Quality", "Compliance", "Pipelines", "Ads Infra"],
     logo: MetaLogo,
   },
   {
@@ -48,13 +41,7 @@ const EXPERIENCES = [
       "Improved pricing coverage and efficiency with forward pricing techniques for equity derivatives including different swaps, Bermudan Swaption and Cross Currency Forward.",
       "Used Monte Carlo simulations to support valuation workflows and validate behavior under realistic market dynamics.",
     ],
-    tags: [
-      "Stochastic Volatility",
-      "Monte Carlo",
-      "Forward Pricing",
-      "Derivatives",
-      "Analytics",
-    ],
+    tags: ["Stochastic Volatility", "Monte Carlo", "Forward Pricing", "Derivatives", "Analytics"],
     logo: BMOLogo,
   },
   {
@@ -113,9 +100,7 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const subtitle = isLight ? "text-slate-600" : "text-slate-400";
-  const cardBg = isLight
-    ? "bg-white border-slate-200"
-    : "bg-slate-950/70 border-slate-800";
+  const cardBg = isLight ? "bg-white border-slate-200" : "bg-slate-950/70 border-slate-800";
   const metaText = isLight ? "text-emerald-600" : "text-emerald-400/80";
   const bodyText = isLight ? "text-slate-700" : "text-slate-200";
   const companyText = isLight ? "text-slate-500" : "text-slate-400";
@@ -132,9 +117,7 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
     if (!container) return;
 
     const handleScroll = () => {
-      const slides = Array.from(
-        container.querySelectorAll<HTMLElement>("[data-slide='true']")
-      );
+      const slides = Array.from(container.querySelectorAll<HTMLElement>("[data-slide='true']"));
       if (!slides.length) return;
 
       const containerRect = container.getBoundingClientRect();
@@ -165,13 +148,14 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
   const goToIndex = (idx: number) => {
     const container = containerRef.current;
     if (!container) return;
-    const slides = Array.from(
-      container.querySelectorAll<HTMLElement>("[data-slide='true']")
-    );
+
+    const slides = Array.from(container.querySelectorAll<HTMLElement>("[data-slide='true']"));
     if (idx < 0 || idx >= slides.length) return;
+
     const target = slides[idx];
     const containerRect = container.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
+
     const delta =
       targetRect.left -
       containerRect.left -
@@ -194,16 +178,11 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
   }, [activeIndex]);
 
   return (
-    <AnimatedSection
-      id="experience"
-      className="h-screen flex flex-col justify-center pt-12"
-    >
+    <AnimatedSection id="experience" className="min-h-[100svh] flex flex-col justify-center pt-12">
       {/* header */}
       <div className="flex items-baseline justify-between pr-2">
         <div>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            Experiences
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Experiences</h2>
           <p className={`mt-2 text-sm sm:text-base ${subtitle}`}>
             Scroll horizontally or use ← / → to move between roles.
           </p>
@@ -219,9 +198,7 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
                 key={idx}
                 className={[
                   "h-1.5 rounded-full transition-all",
-                  idx === activeIndex
-                    ? "w-4 bg-emerald-400"
-                    : "w-1.5 bg-slate-500/50",
+                  idx === activeIndex ? "w-4 bg-emerald-400" : "w-1.5 bg-slate-500/50",
                 ].join(" ")}
               />
             ))}
@@ -230,37 +207,31 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
       </div>
 
       {/* cards */}
-      <div className="relative mt-6 flex-1">
+      <div className="relative mt-6 flex-1 min-h-0">
         <div
           ref={containerRef}
-          className="h-full overflow-x-auto overflow-y-visible [-webkit-overflow-scrolling:touch] snap-x snap-mandatory"
+          className="h-full overflow-x-auto overflow-y-hidden [-webkit-overflow-scrolling:touch] snap-x snap-mandatory"
         >
           <div className="flex gap-8 h-full">
             {EXPERIENCES.map((exp, idx) => (
               <article
                 key={exp.id}
                 data-slide="true"
-                className={`snap-center shrink-0 
-                  w-[95%] sm:w-[92%] lg:w-[88%] 
-                  h-[calc(100vh-14rem)] sm:h-[calc(100vh-12rem)] 
-                  rounded-3xl border p-6 sm:p-10 
-                  flex flex-col justify-between 
-                  transition-transform duration-300 
+                className={`snap-center shrink-0
+                  w-[95%] sm:w-[92%] lg:w-[88%]
+                  h-[calc(100vh-14rem)] sm:h-[calc(100vh-12rem)]
+                  rounded-3xl border p-6 sm:p-10
+                  flex flex-col overflow-hidden
+                  transition-transform duration-300
                   ${cardBg} ${idx === activeIndex ? "" : "scale-[0.97]"}`}
               >
-                {/* top content */}
-                <div>
-                  <p className={`text-xs sm:text-sm font-mono ${metaText}`}>
-                    {exp.years}
-                  </p>
+                {/* scrollable content area */}
+                <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-1">
+                  <p className={`text-xs sm:text-sm font-mono ${metaText}`}>{exp.years}</p>
 
-                  <h3 className="mt-3 text-xl sm:text-2xl font-semibold">
-                    {exp.title}
-                  </h3>
+                  <h3 className="mt-3 text-xl sm:text-2xl font-semibold">{exp.title}</h3>
 
-                  <p
-                    className={`mt-1 text-xs sm:text-sm font-mono ${companyText}`}
-                  >
+                  <p className={`mt-1 text-xs sm:text-sm font-mono ${companyText}`}>
                     {exp.company}
                   </p>
 
@@ -271,15 +242,10 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
                     {exp.blurb}
                   </p>
 
-                  {/* Highlights: closer + MUCH bigger */}
+                  {/* Highlights */}
                   {exp.highlights?.length ? (
-                    <div
-                      className={
-                        idx === activeIndex ? "opacity-100" : "opacity-70"
-                      }
-                    >
+                    <div className={idx === activeIndex ? "opacity-100" : "opacity-70"}>
                       <div className="mt-4 mb-3 h-px w-full bg-gradient-to-r from-emerald-400/30 via-emerald-400/10 to-transparent" />
-
                       <ul className="space-y-4">
                         {exp.highlights.map((h) => (
                           <li
@@ -287,7 +253,7 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
                             className={`flex items-start gap-4 text-[16px] sm:text-lg lg:text-[19px] leading-relaxed ${companyText}`}
                           >
                             <span className="mt-[10px] h-2.5 w-2.5 rounded-full bg-emerald-400 shrink-0" />
-                            <span>{h}</span>
+                            <span className="break-words">{h}</span>
                           </li>
                         ))}
                       </ul>
@@ -295,9 +261,9 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
                   ) : null}
                 </div>
 
-                {/* tags pinned to bottom, but bigger */}
+                {/* tags pinned at bottom */}
                 {exp.tags?.length ? (
-                  <div className="mt-8 flex flex-wrap gap-2">
+                  <div className="pt-6 flex flex-wrap gap-2">
                     {exp.tags.map((tag) => (
                       <span
                         key={tag}
@@ -325,8 +291,7 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
       </div>
 
       <p className="mt-4 text-[11px] font-mono text-slate-400">
-        hint: swipe / scroll horizontally, or press ← / → to move between
-        experiences.
+        hint: swipe / scroll horizontally, or press ← / → to move between experiences.
       </p>
     </AnimatedSection>
   );
