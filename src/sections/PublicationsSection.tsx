@@ -26,50 +26,67 @@ const PUBLICATIONS: Publication[] = [
     blurb:
       "Designed a retrieval-based system for detecting same-hand ballot stuffing that replaces fragile pairwise classification with dense-batch contrastive learning for scalable election auditing.",
     highlights: [
-      "Designed and implemented MarkMatch, a contrastive-learning retrieval system for detecting same-hand ballot marks in real ballot datasets.",
-      "Replaced prior pairwise classification with a dense-batch similarity matrix and dual-loss training scheme to enforce global consistency.",
-      "Achieved 0.943 F1, a clear improvement over previous work for same-hand stuffing detection.",
-      "Integrated mark extraction using the Segment Anything Model (SAM), enabling flexible, template-free segmentation of handwritten ballot marks.",
-      "Built an auditor-facing interface with ranking tables and retrieval heatmaps to surface suspicious ballots for review.",
-      "Translated the research system into a practical, non-biometric audit tool bridging ML research and election-integrity workflows.",
+      "Designed and implemented MarkMatch, a contrastive-learning retrieval system for detecting same-hand ballot marks in real election datasets.",
+      "Replaced fragile pairwise classification with a dense-batch similarity matrix and dual-loss training to enforce global consistency.",
+      "Achieved 0.943 F1, clearly outperforming prior state-of-the-art methods for same-hand stuffing detection.",
+      "Integrated mark extraction using Segment Anything (SAM) for flexible, template-free segmentation of handwritten marks.",
+      "Built an auditor-facing interface with ranking tables and retrieval heatmaps, translating the research model into a practical non-biometric audit tool.",
     ],
-    tags: ["Python", "Contrastive Learning", "Segment Anything", "Information Retrieval", "Computer Vision"],
+    tags: [
+      "Python",
+      "Contrastive Learning",
+      "Segment Anything",
+      "Information Retrieval",
+      "Computer Vision",
+    ],
   },
   {
     id: "impr-hallucinations",
     years: "2024–2025",
-    title: "Mitigating Image Captioning Hallucinations in Vision-Language Models",
+    title:
+      "Mitigating Image Captioning Hallucinations in Vision-Language Models",
     kind: "Research · IEEE IMPR 2025",
     paperUrl: "https://arxiv.org/abs/2505.03420", // <- add your link (arXiv / PDF)
     blurb:
       "Proposed a reinforcement-learning test-time adaptation framework that reduces hallucinations in vision–language models by correcting behavior at inference without retraining.",
     highlights: [
       "Developed a reinforcement-learning test-time adaptation (TTA) framework that updates only ~0.003% of model parameters at inference time.",
-      "Enabled hallucination correction without retraining by adapting behavior during inference rather than re-optimizing the full model.",
-      "Designed a lightweight CLIP-based hallucination evaluation model to score factual consistency during caption generation.",
+      "Enabled hallucination correction without retraining by adapting model behavior dynamically during inference.",
+      "Designed a CLIP-based hallucination evaluation model to score factual consistency during caption generation.",
       "Introduced a dual-reward mechanism combining semantic alignment and non-hallucination probability to guide generation.",
       "Achieved a 15–17% reduction in hallucination rates on LLaVA and InstructBLIP while maintaining inference-time efficiency.",
-      "Improved reliability with stronger semantic-object coverage across state-of-the-art VLMs without sacrificing speed.",
     ],
-    tags: ["Python", "Reinforcement Learning", "Vision-Language", "Test-Time Adaptation", "CLIP", "PyTorch"],
+    tags: [
+      "Python",
+      "Reinforcement Learning",
+      "Vision-Language",
+      "Test-Time Adaptation",
+      "CLIP",
+      "PyTorch",
+    ],
   },
   {
     id: "vipde",
     years: "2024–2025",
-    title: "Visual Prompt Learning of Foundation Models for Post-Disaster Damage Evaluation",
+    title:
+      "Visual Prompt Learning of Foundation Models for Post-Disaster Damage Evaluation",
     kind: "Research · Remote Sensing (May 2025)",
     paperUrl: "https://www.mdpi.com/2072-4292/17/10/1664", // <- add your link (MDPI / PDF)
     blurb:
       "Developed a prompt-based framework for adapting frozen foundation models to assess building damage from satellite imagery, enabling efficient and generalizable post-disaster evaluation.",
     highlights: [
-      "Developed ViPDE, a prompt-based framework that adapts a frozen foundation model (SAM) for post-disaster structural damage evaluation.",
-      "Built a lightweight visual-prompt generator paired with contrastive learning to capture damage semantics from pre/post satellite imagery.",
-      "Kept full-model parameters frozen to reduce computational cost and simplify deployment for rapid-response settings.",
-      "Enabled generalization across multiple disaster types with a unified prompting approach rather than task-specific retraining.",
-      "Achieved robust performance with F1 ≈ 0.70 while retaining the efficiency benefits of a frozen backbone.",
-      "Demonstrated practical applicability for emergency contexts where fast, scalable damage assessment is critical.",
+      "Developed ViPDE, a prompt-based framework that adapts a frozen foundation model (SAM) for post-disaster building damage assessment.",
+      "Built a lightweight visual-prompt generator with contrastive learning using paired pre- and post-disaster satellite imagery.",
+      "Kept the backbone model fully frozen to minimize compute cost and simplify real-world deployment.",
+      "Enabled generalization across multiple disaster types using a unified prompting approach rather than task-specific retraining.",
+      "Achieved robust performance with F1 ≈ 0.70 across diverse disaster scenarios.",
     ],
-    tags: ["Python",  "Prompt Learning","Contrastive Learning", "Computer Vision"],
+    tags: [
+      "Python",
+      "Prompt Learning",
+      "Contrastive Learning",
+      "Computer Vision",
+    ],
   },
 ];
 
@@ -228,7 +245,9 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
                       <h3 className="text-xl sm:text-2xl font-semibold leading-snug">
                         {p.title}
                       </h3>
-                      <p className={`mt-1 text-[10px] sm:text-xs font-mono ${metaText}`}>
+                      <p
+                        className={`mt-1 text-[10px] sm:text-xs font-mono ${metaText}`}
+                      >
                         {p.kind}
                       </p>
                     </div>
@@ -249,13 +268,19 @@ export function PublicationsSection({ isLight }: PublicationsSectionProps) {
                   </div>
 
                   {/* bigger blurb */}
-                  <p className={`mt-6 text-[17px] sm:text-lg lg:text-xl leading-relaxed ${bodyText}`}>
+                  <p
+                    className={`mt-6 text-[17px] sm:text-lg lg:text-xl leading-relaxed ${bodyText}`}
+                  >
                     {p.blurb}
                   </p>
 
                   {/* highlights closer + bigger */}
                   {p.highlights?.length ? (
-                    <div className={idx === activeIndex ? "opacity-100" : "opacity-70"}>
+                    <div
+                      className={
+                        idx === activeIndex ? "opacity-100" : "opacity-70"
+                      }
+                    >
                       <div className="mt-4 mb-3 h-px w-full bg-gradient-to-r from-emerald-400/30 via-emerald-400/10 to-transparent" />
                       <ul className="space-y-4">
                         {p.highlights.map((h) => (

@@ -8,7 +8,6 @@ import { PublicationsSection } from "./sections/PublicationsSection";
 
 import { ConnectSection } from "./sections/ConnectSection";
 
-
 export type ThemeMode = "light" | "dark";
 
 const BACKGROUND_CLASSES: Record<ThemeMode, string> = {
@@ -24,7 +23,6 @@ const SECTIONS: { id: SectionId; label: string }[] = [
   { id: "publication", label: "publications" },
   { id: "connect", label: "connect" },
 ];
-
 
 function App() {
   const [theme, setTheme] = useState<ThemeMode>("dark");
@@ -111,18 +109,17 @@ function App() {
 
       {/* overlay + layout */}
       <div
-  className={`h-full flex flex-col md:flex-row min-h-0 ${
-    isLight ? "bg-white/70" : "bg-black/40"
-  }`}
->
-
+        className={`h-full flex flex-col md:flex-row min-h-0 ${
+          isLight ? "bg-white/70" : "bg-black/40"
+        }`}
+      >
         <Sidebar
-  sections={SECTIONS}
-  activeSection={activeSection}
-  isLight={isLight}
-  theme={theme}
-  setTheme={setTheme}
-/>
+          sections={SECTIONS}
+          activeSection={activeSection}
+          isLight={isLight}
+          theme={theme}
+          setTheme={setTheme}
+        />
 
         {/* main scroll area */}
         <main className="flex-1 min-w-0 min-h-0 w-full overflow-y-auto snap-y snap-mandatory">
@@ -140,12 +137,11 @@ function App() {
             <PublicationsSection isLight={isLight} />
           </div>
 
-           {/* connect – similar feel to hero, centered */}
+          {/* connect – similar feel to hero, centered */}
           <div className="max-w-6xl mx-auto px-10 py-10">
             <ConnectSection isLight={isLight} />
           </div>
         </main>
-
       </div>
     </div>
   );

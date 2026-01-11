@@ -19,17 +19,23 @@ const EXPERIENCES = [
     blurb:
       "Built compliance and data-quality automation across ads infrastructure, reducing risk from deprecations while improving classification correctness and pipeline reliability.",
     highlights: [
-  "Built Python automation to quantify third-party-data concentration, shifting privacy classification from static rules to data-level checks.",
-  "Flagged over-blocking and enabled an A/B test revenue win-back of ~0.001% of Facebook app revenue by improving classification accuracy.",
-  "Remediated 50+ ad features and migrated 82 features from a soon-to-be-deprecated to a supported data source in 5 days.",
-  "Unblocked the planned deprecation, reduced maintenance risk, and ensured serving continuity by removing dependency on legacy sources.",
-  "Delivered a daily Hive compliance discrepancy-check table to monitor mismatches and drive systematic fixes.",
-  "Revived a PHP revenue-tracking pipeline, stabilized a high-revenue dataset (mappings/deprecations/backfills), and defined legacy logging protocols—work adopted into H2 goals and leading to a new cross-org partnership."
-],
-    tags: ["Python", "Hive", "Data Quality", "Compliance", "Pipelines", "Ads Infra"],
+      "Built Python automation to quantify third-party-data concentration, shifting privacy classification from static rules to data-level checks.",
+      "Flagged over-blocking and enabled an A/B test revenue win-back of ~0.001% of Facebook app revenue by improving classification accuracy.",
+      "Remediated 50+ ad features and migrated 82 features from a soon-to-be-deprecated to a supported data source in 5 days.",
+      "Delivered a daily Hive compliance discrepancy-check table to monitor mismatches and drive systematic fixes.",
+      "Revived a PHP revenue-tracking pipeline, stabilized a high-revenue dataset (mappings/deprecations/backfills), and defined legacy logging protocols—work adopted into H2 goals and leading to a new cross-org partnership.",
+    ],
+    tags: [
+      "Python",
+      "Hive",
+      "Data Quality",
+      "Compliance",
+      "Pipelines",
+      "Ads Infra",
+    ],
     logo: MetaLogo,
   },
-    {
+  {
     id: "bmo",
     years: "Sept 2024 – Dec 2024",
     title: "Software Developer Intern",
@@ -37,13 +43,11 @@ const EXPERIENCES = [
     blurb:
       "Worked on equity derivatives pricing with a focus on quantitative modeling and implementation, strengthening the firm’s analytic pricing capabilities.",
     highlights: [
-  "Applied stochastic volatility modeling techniques while integrating a corridor variance swap model into the analytic pricer.",
-  "Improved pricing coverage and efficiency for equity derivatives by implementing model logic cleanly within an existing pricing framework.",
-  "Used Monte Carlo simulations to support valuation workflows and validate behavior under realistic market dynamics.",
-  "Applied forward pricing techniques to ensure consistent valuation inputs and improve flexibility across instrument configurations.",
-  "Supported pricing strategy optimization by making valuations more accurate and easier to iterate on during analysis.",
-  "Contributed within the Equity Modeling and XVA, Credit & Commodities team using Bloomberg Terminal data."
-],
+      "Contributed within the Equity Modeling and XVA, Credit & Commodities team using Bloomberg Terminal data.",
+      "Applied stochastic volatility modeling techniques while integrating a corridor variance swap model into the analytic pricer.",
+      "Improved pricing coverage and efficiency with forward pricing techniques for equity derivatives including different swaps, Bermudan Swaption and Cross Currency Forward.",
+      "Used Monte Carlo simulations to support valuation workflows and validate behavior under realistic market dynamics.",
+    ],
     tags: [
       "Stochastic Volatility",
       "Monte Carlo",
@@ -53,20 +57,19 @@ const EXPERIENCES = [
     ],
     logo: BMOLogo,
   },
-    {
+  {
     id: "tiktok",
     years: "May 2024 – Aug 2024",
     title: "Software Engineer Intern",
     company: "TikTok · Data TnS Core Safety · Vancouver",
     blurb:
       "Built scalable safety and data-access infrastructure for enforcement workflows, focusing on high-throughput services, caching, and large-scale data correctness.",
-highlights: [
-  "Designed and built a production safety microservice in Go with a MySQL backend to manage violation events as first-class entities for enforcement workflows.",
-  "Integrated the service with TikTok’s internal safety platform using Thrift RPC and Kafka to reliably ingest, process, and surface 50K+ violations per day.",
-  "Designed a Redis read cache driven by ML-requested SQL to support latency-sensitive, read-heavy safety pipelines. Reduced production database reads by ~1000× across 11M+ rows (TPS), unlocking sustained throughput under peak load.",
-  "Built Go reconciliation jobs to compare Redis cache state against Hive outputs, detecting missing or erroneous records automatically.",
-  "Refilled corrupted or missing cache entries and raised the overall cache hit rate from 52% to 89%, stabilizing downstream safety systems."
-],
+    highlights: [
+      "Integrated the service with TikTok’s internal safety platform using Thrift RPC and Kafka to reliably ingest, process, and surface 50K+ violations per day.",
+      "Designed a Redis read cache driven by ML-requested SQL to support latency-sensitive, read-heavy safety pipelines. Reduced production database reads by ~1000× across 11M+ rows (TPS), unlocking sustained throughput under peak load.",
+      "Built Go reconciliation jobs to compare Redis cache state against Hive outputs, detecting missing or erroneous records automatically.",
+      "Refilled corrupted or missing cache entries and raised the overall cache hit rate from 52% to 89%, stabilizing downstream safety systems.",
+    ],
     tags: ["Go", "MySQL", "Thrift", "Kafka", "Redis", "Hive", "Microservices"],
     logo: TikTokLogo,
   },
@@ -78,13 +81,12 @@ highlights: [
     blurb:
       "Built internal tooling to speed up diagnostics and improve data visibility, combining scripting + full-stack web work to streamline operational workflows.",
     highlights: [
-  "Developed Microsoft IIS troubleshooting scripts that increased RBC IIS TSS process efficiency by 10×+ for RBC’s expansion of CNB.",
-  "Delivered an internal workflow that reduced repetitive manual debugging steps and made common failure cases faster to diagnose.",
-  "Recognized as a major departmental accomplishment in 2023 Q3 for impact and adoption.",
-  "Engineered internal web tooling across both front-end and back-end, combining UI/UX work with data plumbing for operational use.",
-  "Built with .NET 6 (CSHTML), JavaScript, and CSS, focusing on responsiveness and clarity for internal users.",
-  "Used Postman REST APIs to fetch 3,000+ lines of server data in seconds, improving visibility during investigations."
-],
+      "Developed Microsoft IIS troubleshooting scripts that increased RBC IIS TSS process efficiency by 10×+ for RBC’s expansion of CNB.",
+      "Recognized as a major departmental accomplishment in 2023 Q3 for impact and adoption.",
+      "Engineered internal web tooling across both front-end and back-end, combining UI/UX work with data plumbing for operational use.",
+      "Built with .NET 6 (CSHTML), JavaScript, and CSS, focusing on responsiveness and clarity for internal users.",
+      "Used Postman REST APIs to fetch 3,000+ lines of server data in seconds, improving visibility during investigations.",
+    ],
     tags: [".NET 6", "CSHTML", "JavaScript", "CSS", "IIS", "Postman", "REST"],
     logo: RBCLogo,
   },
@@ -96,16 +98,15 @@ highlights: [
     blurb:
       "Worked on enterprise web maintenance and feature enhancements in a .NET environment, building solid fundamentals in end-to-end delivery and cross-team execution.",
     highlights: [
-  "Troubleshot and enhanced production website pages (including MyRicoh), shipping fixes and improvements as requirements came in.",
-  "Built and updated server-rendered pages using CSHTML, and worked with SQL Server to support data-backed UI flows.",
-  "Worked in a .NET stack inside Visual Studio and Microsoft Azure, getting comfortable with enterprise tooling and deployment conventions.",
-  "Learned and applied the MVC model in practice, translating tickets into maintainable changes across views, controllers, and data access.",
-  "Followed SDLC phases end-to-end—implementing changes, validating behavior, and iterating based on test/UAT feedback.",
-  "Coordinated across teams on task details, deployment steps, and UAT progress to keep releases moving smoothly."
-],
+      "Troubleshot and enhanced production website pages (including MyRicoh), shipping fixes and improvements as requirements came in.",
+      "Built and updated server-rendered pages using CSHTML, and worked with SQL Server to support data-backed UI flows.",
+      "Worked in a .NET stack inside Visual Studio and Microsoft Azure, getting comfortable with enterprise tooling and deployment conventions.",
+      "Learned and applied the MVC model in practice, translating tickets into maintainable changes across views, controllers, and data access.",
+      "Followed SDLC phases end-to-end—implementing changes, validating behavior, and iterating based on test/UAT feedback.",
+    ],
     tags: ["CSHTML", "SQL Server", ".NET", "Azure", "MVC", "SDLC"],
     logo: RicohLogo,
-  }
+  },
 ];
 
 export function ExperienceSection({ isLight }: ExperienceSectionProps) {
@@ -273,7 +274,11 @@ export function ExperienceSection({ isLight }: ExperienceSectionProps) {
 
                   {/* Highlights: closer + MUCH bigger */}
                   {exp.highlights?.length ? (
-                    <div className={idx === activeIndex ? "opacity-100" : "opacity-70"}>
+                    <div
+                      className={
+                        idx === activeIndex ? "opacity-100" : "opacity-70"
+                      }
+                    >
                       <div className="mt-4 mb-3 h-px w-full bg-gradient-to-r from-emerald-400/30 via-emerald-400/10 to-transparent" />
 
                       <ul className="space-y-4">
