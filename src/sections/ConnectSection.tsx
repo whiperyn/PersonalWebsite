@@ -21,9 +21,10 @@ export function ConnectSection({ isLight }: ConnectSectionProps) {
   return (
     <AnimatedSection
       id="connect"
-      className="h-screen flex flex-col justify-center"
+      className="min-h-[100svh] flex flex-col justify-center"
     >
-      <div className="max-w-6xl mx-auto px-10 sm:px-12 lg:px-16">
+      <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 py-10">
         <p className="text-[11px] font-mono uppercase tracking-[0.24em] text-emerald-500">
           let&apos;s connect
         </p>
@@ -172,6 +173,7 @@ export function ConnectSection({ isLight }: ConnectSectionProps) {
             </div>
           </form>
         </div>
+      </div>
       </div>
     </AnimatedSection>
   );

@@ -69,7 +69,7 @@ function App() {
       }`}
     >
       {/* top-right light/dark toggle */}
-      <div className="fixed top-3 right-4 z-30">
+      <div className="fixed top-3 right-4 z-30 hidden md:block">
         <div
           className={`rounded-full border backdrop-blur-sm px-2 py-1 flex items-center gap-2 text-[11px] font-mono ${
             isLight
@@ -111,16 +111,23 @@ function App() {
 
       {/* overlay + layout */}
       <div
-        className={`h-full flex flex-row ${
-          isLight ? "bg-white/70" : "bg-black/40"
-        }`}
-      >
-        <Sidebar sections={SECTIONS} activeSection={activeSection} isLight={isLight} />
+  className={`h-full flex flex-col md:flex-row min-h-0 ${
+    isLight ? "bg-white/70" : "bg-black/40"
+  }`}
+>
+
+        <Sidebar
+  sections={SECTIONS}
+  activeSection={activeSection}
+  isLight={isLight}
+  theme={theme}
+  setTheme={setTheme}
+/>
 
         {/* main scroll area */}
-        <main className="flex-1 w-full overflow-y-scroll snap-y snap-mandatory">
+        <main className="flex-1 min-w-0 min-h-0 w-full overflow-y-auto snap-y snap-mandatory">
           {/* HERO – keep as is, centered + padded */}
-          <div className="max-w-6xl mx-auto px-10 py-10">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-10">
             <HeroSection isLight={isLight} />
           </div>
 

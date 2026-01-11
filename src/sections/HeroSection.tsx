@@ -15,10 +15,14 @@ export function HeroSection({ isLight }: HeroSectionProps) {
   return (
     <AnimatedSection
       id="hero"
-      className="relative h-screen flex flex-col justify-center pt-4 overflow-hidden"
+      className="relative min-h-[100svh] flex flex-col justify-center pt-4 overflow-hidden"
+
     >
       {/* floating logos background */}
-      <FloatingLogos isLight={isLight} />
+      <div className="hidden sm:block">
+  <FloatingLogos isLight={isLight} />
+</div>
+
 
       {/* main hero content above logos */}
       <div className="relative z-10">
@@ -29,8 +33,9 @@ export function HeroSection({ isLight }: HeroSectionProps) {
           Roselyn Zhang
         </h1>
         <p className={`mt-3 text-sm sm:text-base ${subtitleColor}`}>
-          CS @ Waterloo · Software Engineering & Machine Learning · quant-ish, research-ish, and occasionally chaotic.
-        </p>
+  CS @ Waterloo · Computer Science · technical, quant-ish, research-ish, and occasionally chaotic.
+</p>
+
 
         {/* small action buttons */}
         <div className="mt-6 flex flex-wrap gap-3 text-xs">
@@ -57,7 +62,7 @@ export function HeroSection({ isLight }: HeroSectionProps) {
         </div>
 
         {/* section boxes for quick navigation */}
-        <div className="mt-10 flex gap-4 flex-nowrap">
+        <div className="mt-10 flex gap-4 flex-nowrap overflow-x-auto pb-2 pr-2 [-webkit-overflow-scrolling:touch]">
           {/* 01 overview */}
           <a
             href="#hero"
