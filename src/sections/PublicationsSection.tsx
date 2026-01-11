@@ -51,8 +51,7 @@ const PUBLICATIONS: Publication[] = [
       "Proposed a reinforcement-learning test-time adaptation framework that reduces hallucinations in vision–language models by correcting behavior at inference without retraining.",
     highlights: [
       "Developed a reinforcement-learning test-time adaptation (TTA) framework that updates only ~0.003% of model parameters at inference time.",
-      "Enabled hallucination correction without retraining by adapting model behavior dynamically during inference.",
-      "Designed a CLIP-based hallucination evaluation model to score factual consistency during caption generation.",
+      "Enabled hallucination correction without retraining by adapting model behavior dynamically during inference. Designed a CLIP-based hallucination evaluation model to score factual consistency during caption generation.",
       "Introduced a dual-reward mechanism combining semantic alignment and non-hallucination probability to guide generation.",
       "Achieved a 15–17% reduction in hallucination rates on LLaVA and InstructBLIP while maintaining inference-time efficiency.",
     ],

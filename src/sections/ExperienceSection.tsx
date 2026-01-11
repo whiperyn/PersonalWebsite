@@ -22,8 +22,8 @@ const EXPERIENCES = [
       "Built Python automation to quantify third-party-data concentration, shifting privacy classification from static rules to data-level checks.",
       "Flagged over-blocking and enabled an A/B test revenue win-back of ~0.001% of Facebook app revenue by improving classification accuracy.",
       "Remediated 50+ ad features and migrated 82 features from a soon-to-be-deprecated to a supported data source in 5 days.",
-      "Delivered a daily Hive compliance discrepancy-check table to monitor mismatches and drive systematic fixes.",
-      "Revived a PHP revenue-tracking pipeline, stabilized a high-revenue dataset (mappings/deprecations/backfills), and defined legacy logging protocols—work adopted into H2 goals and leading to a new cross-org partnership.",
+      "Delivered a daily Hive compliance discrepancy-check table to monitor compliance mismatches.",
+      "Revived a PHP revenue-tracking pipeline, stabilized a high-revenue dataset (mappings / deprecations / backfills), and defined legacy logging protocols—work adopted into H2 goals and leading to a new cross-org partnership.",
     ],
     tags: [
       "Python",
@@ -101,7 +101,6 @@ const EXPERIENCES = [
       "Troubleshot and enhanced production website pages (including MyRicoh), shipping fixes and improvements as requirements came in.",
       "Built and updated server-rendered pages using CSHTML, and worked with SQL Server to support data-backed UI flows.",
       "Worked in a .NET stack inside Visual Studio and Microsoft Azure, getting comfortable with enterprise tooling and deployment conventions.",
-      "Learned and applied the MVC model in practice, translating tickets into maintainable changes across views, controllers, and data access.",
       "Followed SDLC phases end-to-end—implementing changes, validating behavior, and iterating based on test/UAT feedback.",
     ],
     tags: ["CSHTML", "SQL Server", ".NET", "Azure", "MVC", "SDLC"],
